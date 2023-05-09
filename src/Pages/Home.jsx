@@ -6,6 +6,7 @@ import home from "./home.module.css";
 function Home() {
   return (
     <>
+    <br />
       <div className={home.hero}></div>
       <Productos />
     </>

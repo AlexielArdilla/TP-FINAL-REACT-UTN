@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
+import './producto.css';
 
 const styles = {
   card: {
     marginBottom: "10px",
     width: "18rem"
-  },
+  }
 };
 
 function Producto({ id, nombre, precio, thumbnail }) {
@@ -18,11 +19,11 @@ function Producto({ id, nombre, precio, thumbnail }) {
         <Card.Body>
           <Card.Title>{nombre}</Card.Title>
           <Card.Text>${precio}</Card.Text>
-          <Button variant="primary" className="boton" as={Link} to={`/producto/${id}`}>
-            Ver Detalle
+          <Button variant="primary" as={Link} to={`/producto/${id}`}>
+            Detalle
           </Button>
-          <Button variant="primary" className="boton" as={Link} to={`/producto/modificar/${id}`}>
-            Modificar
+          <Button variant="primary">
+            Favoritos
           </Button>
         </Card.Body>
       </Card>

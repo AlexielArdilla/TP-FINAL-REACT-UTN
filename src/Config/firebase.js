@@ -5,6 +5,7 @@ import 'firebase/compat/firestore';
 const firebaseConfig = {
     apiKey: "AIzaSyBObYy3dGmB9BvM_uHRvH09ttqGDPHdcRY",
     authDomain: "mi-proyecto-utn.firebaseapp.com",
+    databaseURL: "https://mi-proyecto-utn-default-rtdb.firebaseio.com",
     projectId: "mi-proyecto-utn",
     storageBucket: "mi-proyecto-utn.appspot.com",
     messagingSenderId: "961006128826",
@@ -12,7 +13,5 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig)
-
-console.log("Dice Alexx: ",firebase.firestore())
 
 export default firebase

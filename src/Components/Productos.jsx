@@ -1,33 +1,33 @@
 import { useEffect, useState } from "react";
 import Producto from "./Producto";
 import { getAllProductos } from "../Services/productosService";
-import Buscador from "./Buscador";
 import Row from "react-bootstrap/Row";
 
 function Productos() {
   const [loading, setLoading] = useState(true);
   const [productos, setProductos] = useState([]);
-  const [titulo, setTitulo] = useState("Listado de productos");
-  const [buscar, setBuscar] = useState("ipod");
+  const titulo = "Listado de productos";
+  const [buscar, setBuscar] = useState("iPhone");
 
-  useEffect(() => {
-    const request = async () => {
-      try {
-        const querySnapshot = await getAllProductos(buscar);
-        // const response = await res.json()
-        console.log(
-          "🚀 ~ file: Productos.jsx:25 ~ request ~ response:",
-          querySnapshot.docs
-        );
-        setProductos(querySnapshot.docs);
-        setLoading(false);
-      } catch (e) {
-        console.log(e);
+  useEffect(
+    () => {
+      const request = async () => {
+        try {
+          const response = await getAllProductos(buscar)
+          // const response = await res.json()
+          console.log("Productos:", response.results)
+          setProductos(response.data.results)
+          setLoading(false)
+        } catch (e) {
+          console.log(e)
+
+        }
+
       }
-    };
-
-    request();
-  }, [buscar]);
+      request()
+    },
+    [buscar]
+  );
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -41,13 +41,21 @@ function Productos() {
     return (
       <div>
         <h1>{titulo}</h1>
+        <div id="buscador">
+          <h3>Buscar:</h3> <br />
+          <input type="text"
+            name="buscar"
+            value={buscar}
+            onChange={handleChange}
+          /> <br />
+          <hr /></div>
         <Row>
           {productos.map((producto) => (
             <Producto
               id={producto.id}
-              nombre={producto.data().title}
-              precio={producto.data().price}
-              thumbnail={producto.data().thumbnail}
+              thumbnail={producto.thumbnail}
+              nombre={producto.title}
+              precio={producto.price}
               categoria=""
             />
           ))}

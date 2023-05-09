@@ -1,0 +1,10 @@
+.producto-lista{
+
+    text-align: center;
+    background-color: whitesmoke;
+    border: 3px solid black;
+    border-radius: 3px;
+    padding: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
