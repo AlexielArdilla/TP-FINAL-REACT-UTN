@@ -14,7 +14,7 @@ function Registro() {
   const onSubmit = async (data) => {
     try {
       const user = await create(data);
-      console.log("🚀 ~ file: Registro.jsx:16 ~ onSubmit ~ user:", user);
+      console.log("🚀 ~ Este es user", user);
     } catch (e) {
       console.log(e);
     }

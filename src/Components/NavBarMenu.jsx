@@ -24,7 +24,7 @@ function NavBarMenu() {
           </Nav.Link>
           <NavDropdown title="Productos" id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to="/producto/alta">
-              Nuevo
+              Nuevo producto
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
