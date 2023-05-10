@@ -4,6 +4,7 @@
 }
 
 #favorito{
-    background-color: brown;
+    background-color: rgb(20, 156, 38);
     color: white;
+    border-radius: 5px;
 }
