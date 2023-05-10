@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -32,19 +33,19 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-#footer{
+#footer {
 
   background-color: black;
   color: white;
   text-align: center;
   padding: 25px;
+  margin-top: 130px;
+  
 }
 
-.boton{
-  padding-left:15px;
-}

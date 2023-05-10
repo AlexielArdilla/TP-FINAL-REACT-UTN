@@ -35,7 +35,7 @@ function Detalle(){
   
 
   const handleClick = ()=>{
-    setComprar('Gracias por su compra');
+    setComprar('Gracias por su compra!!!');
   }
   if(loading){
     return (
