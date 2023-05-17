@@ -1,0 +1,11 @@
+#parrafo{
+    text-align: center;
+    padding: 35px;
+    margin: 26px;
+    border: 3px solid black;
+}
+
+.jumbotron h2{
+
+    margin-top: 25px;
+}

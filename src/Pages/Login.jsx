@@ -14,7 +14,8 @@ function Login() {
   const onSubmit = async (data) => {
     try {
       const user = await login(data.email, data.password);
-      console.log("🚀 ~ file: Registro.jsx:16 ~ onSubmit ~ user:", user);
+      console.log("Se logueó el user: ", user);
+      alert(`Se logueó con éxito ${data.email}`)
     } catch (e) {
       console.log(e);
     }
@@ -84,6 +85,8 @@ function Login() {
               Ingresar
             </Button>
           </Form>
+          <br />
+          <br />
           <br />
           <br />
           <br />

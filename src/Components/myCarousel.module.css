@@ -1,0 +1,26 @@
+.imagen1{
+    background-image: url(../img/adorables-perris1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 800px;
+    height: 400px;
+}
+
+.imagen2{
+    background-image: url(../img/adorables-perris2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 800px;
+    height: 400px;
+}
+
+.imagen3{
+    background-image: url(../img/adorables-perris3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    width: 800px;
+    height: 400px;
+}

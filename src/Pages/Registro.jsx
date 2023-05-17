@@ -14,7 +14,8 @@ function Registro() {
   const onSubmit = async (data) => {
     try {
       const user = await create(data);
-      console.log("🚀 ~ Este es user", user);
+      console.log("Este es el user creado: ", user);
+
     } catch (e) {
       console.log(e);
     }
