@@ -1,4 +1,4 @@
-import instance from "../Config/axios"
+//import instance from "../Config/axios"
 import firebase from "../Config/firebase";
 
 export async function getAllProductos(buscar="ipod"){
@@ -28,3 +28,4 @@ export async function deleteProducto(id){
     .delete()
     
 }
+

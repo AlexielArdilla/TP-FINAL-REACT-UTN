@@ -12,3 +12,8 @@
 .producto-lista img{
     width: 230px;
 }
+
+.container-fluid h1{
+    margin-top: 25px;
+    text-align: center;
+}

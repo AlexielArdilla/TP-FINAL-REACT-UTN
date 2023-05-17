@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { getById } from "../Services/productosService";
 import './detalle.css';
@@ -8,7 +8,7 @@ function Detalle() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [producto, setProducto] = useState({});
-  console.log("🚀 ~ file: Detalle.jsx:4 ~ Detalle ~ params:", id);
+  console.log("🚀 ~ file: Detalle ID params:", id);
 
   useEffect(() => {
     const request = async () => {
@@ -30,7 +30,7 @@ function Detalle() {
     request();
   }, [id]);
 
-  const handleClick = () => {};
+  //const handleClick = () => {};
   if (loading) {
     return <div>Cargando ...</div>;
   }
@@ -39,7 +39,7 @@ function Detalle() {
       <img src={producto.thumbnail} alt="imagen del  producto" />
       <h1>{producto.title}</h1>
       <p>${producto.price}</p>
-      <Button variant="primary" size="lg" onClick={handleClick}>Comprar</Button>
+      <Button variant="primary" id={id} size="lg" as={Link} to="/pagar">Comprar</Button>
     </div>
   );
 }

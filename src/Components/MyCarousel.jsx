@@ -10,7 +10,7 @@ function MyCarousel() {
           className={`d-block w-100 ${myCarousel.imagen1}`} 
         />
         <Carousel.Caption>
-          <h3>Pitbull</h3>
+          <h3>Border-Collie</h3>
           {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>

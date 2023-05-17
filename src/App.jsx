@@ -10,8 +10,10 @@ import Login from "./Pages/Login";
 import ProductosAlta from "./Pages/ProductosAlta";
 import ProductosModificar from "./Pages/ProductosModificar";
 import Footer from "./Components/Footer";
+import Pagar from "./Pages/Pagar";
 
 function App() {
+  
   return (
 
     <Router>
@@ -27,6 +29,7 @@ function App() {
             element={<ProductosModificar />}
           />
           <Route path="/producto/:id" element={<Detalle />} />
+          <Route path="/pagar" element={<Pagar />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>

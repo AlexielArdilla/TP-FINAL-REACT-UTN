@@ -15,7 +15,7 @@ function Productos() {
         const querySnapshot = await getAllProductos();
         // const response = await res.json()
         console.log(
-          "🚀 ~ file: Productos.jsx:25 ~ request ~ response:",
+          "🚀 ~ Cuando se trae todos los productos:",
           querySnapshot.docs
         );
         setProductos(querySnapshot.docs);

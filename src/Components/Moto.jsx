@@ -10,10 +10,10 @@ const Moto = () => {
                         <h2>
                             Hola amante de los animales
                         </h2>
-                        <p id='parrafo'>
+                        <h4 id='parrafo'>
                             En adopta un perri No cobramos por los animales que regalamos, pedimos dinero para mantener el hogar y para abonar los sueldos
                             de nuestros empleados.                         
-                        </p>
+                        </h4>
                     </div>
                 </div>
             </div>
