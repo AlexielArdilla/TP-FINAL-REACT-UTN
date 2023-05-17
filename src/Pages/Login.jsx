@@ -29,6 +29,7 @@ function Login() {
         <div className="col-md-4">
         </div>
         <div className="col-md-4">
+          <h1>Ingrese</h1>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
@@ -85,8 +86,6 @@ function Login() {
               Ingresar
             </Button>
           </Form>
-          <br />
-          <br />
           <br />
           <br />
           <br />

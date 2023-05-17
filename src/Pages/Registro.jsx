@@ -29,6 +29,7 @@ function Registro() {
       <div className="col-md-4">
       </div>
       <div className="col-md-4">
+        <h1>Regístrese</h1>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicNombre">
             <Form.Label>Nombre</Form.Label>
