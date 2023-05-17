@@ -19,9 +19,9 @@ const styles = {
 };
 
 
-function Pagar({id/*id, thumbnail, title, price */}) {
+function Pagar({/*id, thumbnail, title, price */}) {
 
-    //const { id } = useParams();
+    const { id } = useParams();
     const [loading, setLoading] = useState(true);
     const [producto, setProducto] = useState({});
     console.log("🚀 Será esta la ID???:", id);
@@ -47,7 +47,9 @@ function Pagar({id/*id, thumbnail, title, price */}) {
     }, [id]);
 
 
-    const handleSubmit = () =>{} 
+    const handleSubmit = () =>{
+        alert(`El pago por ${producto.title} ha sido exitoso!!!`)
+    } 
 
     if (loading) {
         return <div>Cargando ...</div>;
@@ -59,10 +61,10 @@ function Pagar({id/*id, thumbnail, title, price */}) {
                 <div class="col-md-4">
                     <h1 style={{textAlign:'center', margin:"25px 25px"}}>Tu perris</h1>
                     <Card style={styles.card}>
-                        <Card.Img variant="top" src={perrito} />
+                        <Card.Img variant="top" src={producto.thumbnail} />
                         <Card.Body>
-                            <Card.Title>Producto título</Card.Title>
-                            <Card.Text>Precio: $150000</Card.Text>
+                            <Card.Title>{producto.title}</Card.Title>
+                            <Card.Text>Precio: ${producto.price}</Card.Text>
                             <Button variant="danger" as={Link} to={'/'}>
                                 Volver
                             </Button>

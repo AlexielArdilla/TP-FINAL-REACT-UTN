@@ -29,7 +29,7 @@ function App() {
             element={<ProductosModificar />}
           />
           <Route path="/producto/:id" element={<Detalle />} />
-          <Route path="/pagar" element={<Pagar />} />
+          <Route path="/producto/:id/pagar" element={<Pagar />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Container>

@@ -39,7 +39,7 @@ function Detalle() {
       <img src={producto.thumbnail} alt="imagen del  producto" />
       <h1>{producto.title}</h1>
       <p>${producto.price}</p>
-      <Button variant="primary" id={id} size="lg" as={Link} to="/pagar">Comprar</Button>
+      <Button variant="primary" id={id} size="lg" as={Link} to={`/producto/${id}/pagar`}>Pagar</Button>
     </div>
   );
 }
