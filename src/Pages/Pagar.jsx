@@ -4,7 +4,7 @@ import { getById } from "../Services/productosService";
 import { Button, Card, Form } from "react-bootstrap";
 import './detalle.css';
 import { Link } from "react-router-dom";
-import perrito from "../img/perrito.jpg"
+//import perrito from "../img/perrito.jpg"
 
 const styles = {
 
@@ -19,7 +19,7 @@ const styles = {
 };
 
 
-function Pagar({/*id, thumbnail, title, price */}) {
+function Pagar() {
 
     const { id } = useParams();
     const [loading, setLoading] = useState(true);

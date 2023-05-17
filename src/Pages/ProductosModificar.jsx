@@ -24,6 +24,7 @@ function ProductosModificar() {
         setValue("thumbnail", response.data().thumbnail);
       } catch (e) {
         console.log(e);
+        alert("Modificado con éxito")
       }
     };
     result();
@@ -36,8 +37,10 @@ function ProductosModificar() {
         "🚀 ~ file: ProductosAlta.jsx:18 ~ onSubmit ~ document:",
         document
       );
+      alert("Modificado con éxito!!!")
     } catch (e) {
       console.log(e);
+      alert("Error al modificar!!!")
     }
   };
 
@@ -48,8 +51,12 @@ function ProductosModificar() {
         "🚀 ~ file: ProductosModificar.jsx:46 ~ handleClickEliminar ~ response:",
         response
       );
+
+      alert("Eliminado con éxito!!!")
+
     } catch (e) {
       console.log(e);
+      alert("No se pudo eliminar!!!")
     }
   };
 

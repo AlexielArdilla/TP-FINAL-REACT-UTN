@@ -3,6 +3,7 @@ import Productos from "../Components/Productos";
 import Moto from "../Components/Moto";
 import home from "./home.module.css";
 import MyCarousel from "../Components/MyCarousel";
+import Testimonios from "../Components/Testimonios";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <Moto/>
       <MyCarousel />
       <Productos />
+      <Testimonios/>
     </>
   );
 }

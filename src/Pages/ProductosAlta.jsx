@@ -18,8 +18,10 @@ function ProductosAlta() {
         "🚀 ~ file: ProductosAlta.jsx:18 ~ onSubmit ~ document:",
         document
       );
+      alert("Creado con éxito")
     } catch (e) {
       console.log(e);
+      alert("No se pudo crear!!!")
     }
   };
 

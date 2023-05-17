@@ -5,32 +5,32 @@ function MyCarousel() {
 
   return (
     <Carousel>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
         <div
           className={`d-block w-100 ${myCarousel.imagen1}`} 
         />
         <Carousel.Caption>
-          <h3>Border-Collie</h3>
+          <h3 style={{color:"white"}}>Border-Collie</h3>
           {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
       <div
           className={`d-block w-100 ${myCarousel.imagen2}`} 
         />
 
         <Carousel.Caption>
-          <h3>Galgo</h3>
+          <h3 style={{color:"white"}}>Galgo</h3>
          {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
       <div
           className={`d-block w-100 ${myCarousel.imagen3}`} 
         />
 
         <Carousel.Caption>
-          <h3>Callejero</h3>
+          <h3 style={{color:"white"}}>Callejero</h3>
           {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>

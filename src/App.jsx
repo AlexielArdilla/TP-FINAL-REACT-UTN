@@ -13,9 +13,8 @@ import Footer from "./Components/Footer";
 import Pagar from "./Pages/Pagar";
 
 function App() {
-  
-  return (
 
+  return (
     <Router>
       <NavBarMenu />
       <Container>
