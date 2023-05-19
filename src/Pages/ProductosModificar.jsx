@@ -13,8 +13,7 @@ function ProductosModificar() {
   const {
     register,
     handleSubmit,
-    setValue,
-    formState: { errors },
+    setValue
   } = useForm({ mode: "onChange" });
   const [alert, setAlert] = useState({ variant: "", text: "" });
 

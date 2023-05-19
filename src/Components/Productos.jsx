@@ -12,7 +12,7 @@ function Productos() {
     const request = async () => {
       try {
         const querySnapshot = await getAllProductos();
-        
+
         console.log(
           "🚀 ~ Cuando se trae todos los productos:",
           querySnapshot.docs
@@ -29,13 +29,13 @@ function Productos() {
 
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <div style={{textAlign: "center"}}><h1>Cargando...</h1></div>
   } else {
     return (
       <div>
         <h1 style={{ textAlign: 'center', padding: '25px' }}>{titulo}</h1>
         <div className="d-flex justify-content-center"></div>
-        <Row  xs={1} md={2} className="g-4">
+        <Row xs={1} md={2} className="g-4">
           {productos.map((producto) => (
             <Producto
               key={producto.id}

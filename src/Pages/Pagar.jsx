@@ -24,8 +24,7 @@ function Pagar() {
 
   const {
     register,
-    handleSubmit,
-    formState: { errors },
+    handleSubmit
   } = useForm({ mode: "onChange" });
 
   const { id } = useParams();
