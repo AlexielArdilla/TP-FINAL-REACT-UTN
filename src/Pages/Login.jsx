@@ -26,7 +26,7 @@ function Login() {
       console.log("Se logueó el user: ", user);
       context.loginUser();
       navigate("/");
-      //alert(`Se logueó con éxito ${data.email}`);
+      //alert(`Se logueó con éxito ${user.email}`);
 
     } catch (e) {
       console.log(e.code);
