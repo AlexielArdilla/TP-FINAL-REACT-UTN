@@ -7,8 +7,7 @@ function Productos() {
   const [loading, setLoading] = useState(true);
   const [productos, setProductos] = useState([]);
   const titulo = "Listado de perris";
-  /*const [buscar, setBuscar] = useState("iPhone");*/
-
+  
   useEffect(() => {
     const request = async () => {
       try {
@@ -28,11 +27,6 @@ function Productos() {
     request();
   }, []);
 
-  /*const handleChange = (event) => {
-    const value = event.target.value;
-    console.log("🚀 ~ file: Productos.jsx:32 ~ handleChange ~ value:", value);
-    setBuscar(value);
-  };*/
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -40,14 +34,6 @@ function Productos() {
     return (
       <div>
         <h1 style={{textAlign: 'center', padding: '25px'}}>{titulo}</h1>
-       {/* <div id="buscador">
-          <h3>Buscar:</h3> <br />
-          <input type="text"
-            name="buscar"
-            value={buscar}
-            onChange={handleChange}
-          /> <br />
-          <hr /></div>*/}
         <Row>
           {productos.map((producto) => (
             <Producto
