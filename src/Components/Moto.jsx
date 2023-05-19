@@ -3,10 +3,10 @@ import './motoStyles.css'
 
 const Moto = () => {
     return (
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="jumbotron">
+        <div className="container-fluid">
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="jumbotron">
                         <h2>
                             Hola amante de los animales
                         </h2>
