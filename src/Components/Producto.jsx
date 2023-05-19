@@ -7,7 +7,7 @@ import './producto.css';
 const styles = {
   card: {
     marginBottom: "10px",
-    width: "18rem"
+    width: "18rem",
   },
   button: {
     margin: "15px"
@@ -27,7 +27,6 @@ function Producto({ id, nombre, precio, thumbnail, categoria }) {
 
   return (
     <Col xs={12} sm={6} lg={4} xxl={3}>
-      {/*<div id="favorito">{favorito}</div>*/}
       <Card style={styles.card}>
         <Card.Img variant="top" src={thumbnail} />
         <Card.Body>

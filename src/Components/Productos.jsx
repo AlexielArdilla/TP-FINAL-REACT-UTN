@@ -7,12 +7,12 @@ function Productos() {
   const [loading, setLoading] = useState(true);
   const [productos, setProductos] = useState([]);
   const titulo = "Listado de perris";
-  
+
   useEffect(() => {
     const request = async () => {
       try {
         const querySnapshot = await getAllProductos();
-        // const response = await res.json()
+        
         console.log(
           "🚀 ~ Cuando se trae todos los productos:",
           querySnapshot.docs
@@ -33,20 +33,21 @@ function Productos() {
   } else {
     return (
       <div>
-        <h1 style={{textAlign: 'center', padding: '25px'}}>{titulo}</h1>
-        <Row>
+        <h1 style={{ textAlign: 'center', padding: '25px' }}>{titulo}</h1>
+        <div className="d-flex justify-content-center"></div>
+        <Row xs={1} md={2} className="g-4">
           {productos.map((producto) => (
             <Producto
-            key={producto.id}
-            id={producto.id}
-            nombre={producto.data().title}
-            precio={producto.data().price}
-            thumbnail={producto.data().thumbnail}
-            categoria={producto.data().categoria}
+              key={producto.id}
+              id={producto.id}
+              nombre={producto.data().title}
+              precio={producto.data().price}
+              thumbnail={producto.data().thumbnail}
+              categoria={producto.data().categoria}
             />
           ))}
         </Row>
-      </div>
+      </div >
     );
   }
 }
