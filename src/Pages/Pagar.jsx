@@ -55,10 +55,10 @@ function Pagar() {
         return <div>Cargando ...</div>;
     }
     return (
-        <div class="container-fluid">
+        <div className="container-fluid">
             
-            <div class="row">
-                <div class="col-md-4">
+            <div className="row">
+                <div className="col-md-4">
                     <h1 style={{textAlign:'center', margin:"25px 25px"}}>Tu perris</h1>
                     <Card style={styles.card}>
                         <Card.Img variant="top" src={producto.thumbnail} />
@@ -71,7 +71,7 @@ function Pagar() {
                         </Card.Body>
                     </Card>
                 </div>
-                <div class="col-md-8">
+                <div className="col-md-8">
                 <h1>Pagar</h1>
                 <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicNombre">

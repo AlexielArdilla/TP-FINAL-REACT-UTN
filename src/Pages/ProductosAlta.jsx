@@ -58,6 +58,14 @@ function ProductosAlta() {
                 {...register("thumbnail")}
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicNombre">
+              <Form.Label>Descripción</Form.Label>
+              <Form.Control
+                as="textarea" rows={3}
+                placeholder="Describa al perri"
+                {...register("categoria")}
+              />
+            </Form.Group>
 
             <Button variant="primary" type="submit">
               Guardar

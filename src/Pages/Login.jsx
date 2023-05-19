@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { login } from "../Services/usuariosService";
 import "./Registro.css";
+//import Greeting from "../index";
 
 function Login() {
   const {
@@ -11,11 +12,15 @@ function Login() {
     formState: { errors },
   } = useForm({ mode: "onChange" });
 
+  //const{isLoggedIn, setIsLoggedIn} = (false);
+
   const onSubmit = async (data) => {
     try {
       const user = await login(data.email, data.password);
       console.log("Se logueó el user: ", user);
-      alert(`Se logueó con éxito ${data.email}`)
+      alert(`Se logueó con éxito ${data.email}`);
+      /*acá va el use state*/ 
+      //setIsLoggedIn(true);
     } catch (e) {
       console.log(e);
     }

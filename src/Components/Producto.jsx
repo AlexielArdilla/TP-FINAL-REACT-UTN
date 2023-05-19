@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import './producto.css';
-//import { useState } from "react";
 
 const styles = {
   card: {
@@ -16,7 +15,7 @@ const styles = {
 };
 
 
-function Producto({ id, nombre, precio, thumbnail }) {
+function Producto({ id, nombre, precio, thumbnail, categoria }) {
 
   /*const [favorito, setFavorito] = useState('')
   console.log("favoritos: ", favorito)
@@ -34,6 +33,7 @@ function Producto({ id, nombre, precio, thumbnail }) {
         <Card.Body>
           <Card.Title>{nombre}</Card.Title>
           <Card.Text>${precio}</Card.Text>
+          <Card.Text>{categoria}</Card.Text>
           <Button style={styles.button} variant="primary" as={Link} to={`/producto/${id}`}>
             Detalle
           </Button>

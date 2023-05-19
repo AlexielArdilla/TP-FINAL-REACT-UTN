@@ -22,6 +22,7 @@ function ProductosModificar() {
         setValue("title", response.data().title);
         setValue("price", response.data().price);
         setValue("thumbnail", response.data().thumbnail);
+        setValue("categoria", response.data().categoria);
       } catch (e) {
         console.log(e);
         alert("Modificado con éxito")
@@ -91,6 +92,14 @@ function ProductosModificar() {
             {...register("thumbnail")}
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicNombre">
+              <Form.Label>Descripción</Form.Label>
+              <Form.Control
+                as="textarea" rows={3}
+                placeholder="Describa al perri"
+                {...register("categoria")}
+              />
+            </Form.Group>
 
         <Button variant="primary" type="submit">
           Guardar

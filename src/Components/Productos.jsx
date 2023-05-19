@@ -51,11 +51,12 @@ function Productos() {
         <Row>
           {productos.map((producto) => (
             <Producto
+            key={producto.id}
             id={producto.id}
             nombre={producto.data().title}
             precio={producto.data().price}
             thumbnail={producto.data().thumbnail}
-            categoria=""
+            categoria={producto.data().categoria}
             />
           ))}
         </Row>
