@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
     <br />
-      <div className={home.hero}></div>
+      {/*<div className={home.hero}></div>*/}
       <Moto/>
       <MyCarousel />
       <Productos />

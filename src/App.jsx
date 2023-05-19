@@ -12,11 +12,13 @@ import ProductosModificar from "./Pages/ProductosModificar";
 import Footer from "./Components/Footer";
 import Pagar from "./Pages/Pagar";
 
+
 function App() {
 
   return (
     <Router>
       <NavBarMenu />
+      <div className="hero"></div>
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
