@@ -95,6 +95,13 @@ function Pagar() {
                 placeholder="MMAA"
               />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicNombre">
+              <Form.Label>Código de seguridad:</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Ejemplo 111"
+              />
+            </Form.Group>
             <Button variant="success" type="submit">
               Pagar
             </Button>

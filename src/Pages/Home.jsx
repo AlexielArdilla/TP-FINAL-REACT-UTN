@@ -8,6 +8,7 @@ function Home() {
   return (
     <>
     <br />
+    <div className="hero"></div>
       <Moto/>
       <MyCarousel />
       <Productos />

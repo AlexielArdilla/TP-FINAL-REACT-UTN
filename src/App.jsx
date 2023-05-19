@@ -11,31 +11,33 @@ import ProductosAlta from "./Pages/ProductosAlta";
 import ProductosModificar from "./Pages/ProductosModificar";
 import Footer from "./Components/Footer";
 import Pagar from "./Pages/Pagar";
-
+import GlobalState from "./Context/GlobalState";
 
 function App() {
 
   return (
-    <Router>
-      <NavBarMenu />
-      <div className="hero"></div>
-      <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/alta" element={<Registro />} />
-          <Route path="/ingresar" element={<Login />} />
-          <Route path="/producto/alta" element={<ProductosAlta />} />
-          <Route
-            path="/producto/modificar/:id"
-            element={<ProductosModificar />}
-          />
-          <Route path="/producto/:id" element={<Detalle />} />
-          <Route path="/producto/:id/pagar" element={<Pagar />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Container>
-      <Footer id="footer" />
-    </Router>
+    <GlobalState>
+      <Router>
+        <NavBarMenu />
+        {/*<div className="hero"></div>*/}
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/alta" element={<Registro />} />
+            <Route path="/ingresar" element={<Login />} />
+            <Route path="/producto/alta" element={<ProductosAlta />} />
+            <Route
+              path="/producto/modificar/:id"
+              element={<ProductosModificar />}
+            />
+            <Route path="/producto/:id" element={<Detalle />} />
+            <Route path="/producto/:id/pagar" element={<Pagar />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Container>
+        <Footer id="footer" />
+      </Router>
+    </GlobalState>
   );
 }
 
