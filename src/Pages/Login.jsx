@@ -2,9 +2,12 @@ import { useForm } from "react-hook-form";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { login } from "../Services/usuariosService";
+import { useNavigate } from "react-router-dom";
 import "./Registro.css";
 import EcommerceContext from "../Context/EcommerceContext";
-import { useContext } from "react";
+import { registroMessage } from "../Utils/errorMessage";
+import AlertCustom from "../Components/AlertCustom";
+import { useContext, useState } from "react";
 
 function Login() {
   const context = useContext(EcommerceContext);
@@ -14,17 +17,23 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-
+  const navigate = useNavigate();
+  const [alert, setAlert] = useState({ variant: "", text: "" });
 
   const onSubmit = async (data) => {
     try {
       const user = await login(data.email, data.password);
       console.log("Se logueó el user: ", user);
       context.loginUser();
-      alert(`Se logueó con éxito ${data.email}`);
+      navigate("/");
+      //alert(`Se logueó con éxito ${data.email}`);
 
     } catch (e) {
-      console.log(e);
+      console.log(e.code);
+      setAlert({
+        variant: "danger",
+        text: registroMessage[e.code] || "Ha ocurrido un error",
+      });
     }
   };
 
@@ -37,6 +46,10 @@ function Login() {
         </div>
         <div className="col-md-4">
           <h1>Ingrese</h1>
+          <AlertCustom
+          //variant={alert.variant} text={alert.text}
+          {...alert}
+        />
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>

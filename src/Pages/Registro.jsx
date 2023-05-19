@@ -1,7 +1,10 @@
 import { useForm } from "react-hook-form";
 import Button from "react-bootstrap/Button";
+import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { create } from "../Services/usuariosService";
+import AlertCustom from "../Components/AlertCustom";
+import { registroMessage } from "../Utils/errorMessage";
 import "./Registro.css";
 
 function Registro() {
@@ -10,14 +13,29 @@ function Registro() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
+  //const [loading, setLoading] = useState(false);
+  const [alert, setAlert] = useState({ variant: "", text: "" });
 
   const onSubmit = async (data) => {
     try {
       const user = await create(data);
       console.log("Este es el user creado: ", user);
+      //setLoading(false);
+      setAlert({
+        variant: "success",
+        text: "Gracias por registrarte",
+        duration: 3000,
+        link: "/ingresar",
+      });
 
     } catch (e) {
-      console.log(e);
+      console.log(e.code);
+
+      setAlert({
+        variant: "danger",
+        text: registroMessage[e.code] || "Ha ocurrido un error",
+      });
+      //setLoading(false);
     }
   };
 
@@ -30,6 +48,10 @@ function Registro() {
       </div>
       <div className="col-md-4">
         <h1>Regístrese</h1>
+        <AlertCustom
+          //variant={alert.variant} text={alert.text}
+          {...alert}
+        />
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="formBasicNombre">
             <Form.Label>Nombre</Form.Label>
