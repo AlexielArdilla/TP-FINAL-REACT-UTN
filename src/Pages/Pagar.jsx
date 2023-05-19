@@ -49,6 +49,7 @@ function Pagar() {
 
     const handleSubmit = () =>{
         alert(`El pago por ${producto.title} ha sido exitoso!!!`)
+        
     } 
 
     if (loading) {

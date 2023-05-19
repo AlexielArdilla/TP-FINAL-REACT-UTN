@@ -1,9 +1,15 @@
-
 .hero {
-    background-image: url(../img/banner-alexx.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 25rem;
-    width: 100%;
+  background-image: url(../img/banner-alexx.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 25rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) { 
+  .hero {
+    background-image: url(../img/Banner-responsive.jpg);
+      height: 25rem;
   }
+}

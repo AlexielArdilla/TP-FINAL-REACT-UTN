@@ -35,7 +35,7 @@ function Productos() {
       <div>
         <h1 style={{ textAlign: 'center', padding: '25px' }}>{titulo}</h1>
         <div className="d-flex justify-content-center"></div>
-        <Row xs={1} md={2} className="g-4">
+        <Row  xs={1} md={2} className="g-4">
           {productos.map((producto) => (
             <Producto
               key={producto.id}

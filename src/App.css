@@ -58,3 +58,10 @@
   width: 100%;
 }
 
+@media (max-width: 768px) { 
+  .hero {
+    background-image: url(./img/Banner-responsive.jpg);
+      height: 25rem;
+  }
+}
+
