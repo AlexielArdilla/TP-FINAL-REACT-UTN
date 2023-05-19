@@ -7,6 +7,7 @@ import AlertCustom from "../Components/AlertCustom";
 import { registroMessage } from "../Utils/errorMessage";
 import "./Registro.css";
 
+
 function Registro() {
   const {
     register,

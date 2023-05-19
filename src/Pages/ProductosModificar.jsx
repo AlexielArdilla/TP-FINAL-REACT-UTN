@@ -3,8 +3,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Registro.css";
 import { update, getById, deleteProducto } from "../Services/productosService";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import AlertCustom from "../Components/AlertCustom";
+import { registroMessage } from "../Utils/errorMessage";
 
 function ProductosModificar() {
   const { id } = useParams();
@@ -14,6 +16,7 @@ function ProductosModificar() {
     setValue,
     formState: { errors },
   } = useForm({ mode: "onChange" });
+  const [alert, setAlert] = useState({ variant: "", text: "" });
 
   useEffect(() => {
     const result = async () => {
@@ -23,10 +26,21 @@ function ProductosModificar() {
         setValue("price", response.data().price);
         setValue("thumbnail", response.data().thumbnail);
         setValue("categoria", response.data().categoria);
+
+        setAlert({
+          variant: "success",
+          text: "Modificado con éxito",
+          duration: 3000,
+          link: "/"
+        });
       } catch (e) {
         console.log(e);
-        alert("Modificado con éxito")
+        setAlert({
+          variant: "danger",
+          text: registroMessage[e.code] || "Ha ocurrido un error",
+        });
       }
+      setAlert({});
     };
     result();
   }, [id, setValue]);
@@ -35,13 +49,21 @@ function ProductosModificar() {
     try {
       const document = await update(id, data);
       console.log(
-        "🚀 ~ file: ProductosAlta.jsx:18 ~ onSubmit ~ document:",
+        "Desde modificar:",
         document
       );
-      alert("Modificado con éxito!!!")
+      setAlert({
+        variant: "success",
+        text: "Modificado con éxito",
+        duration: 3000,
+        link: "/",
+      });
     } catch (e) {
-      console.log(e);
-      alert("Error al modificar!!!")
+      console.log(e.code);
+      setAlert({
+        variant: "danger",
+        text: registroMessage[e.code] || "Ha ocurrido un error",
+      });
     }
   };
 
@@ -53,17 +75,29 @@ function ProductosModificar() {
         response
       );
 
-      alert("Eliminado con éxito!!!")
+      setAlert({
+        variant: "success",
+        text: "Eliminado con éxito",
+        duration: 3000,
+        link: "/",
+      });
 
     } catch (e) {
       console.log(e);
-      alert("No se pudo eliminar!!!")
+      setAlert({
+        variant: "danger",
+        text: registroMessage[e.code] || "Ha ocurrido un error",
+      });
     }
   };
 
   return (
     <div>
       <h1>Modificar producto</h1>
+      <AlertCustom
+          //variant={alert.variant} text={alert.text}
+          {...alert}
+        />
       <Button variant="danger" onClick={handleClickEliminar}>
         Eliminar
       </Button>

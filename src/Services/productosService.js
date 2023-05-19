@@ -29,3 +29,8 @@ export async function deleteProducto(id){
     
 }
 
+export async function pay(id, payload){
+
+    
+}
+

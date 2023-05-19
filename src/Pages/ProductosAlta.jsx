@@ -3,6 +3,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Registro.css";
 import { create } from "../Services/productosService";
+import { registroMessage } from "../Utils/errorMessage";
+import { useState } from "react";
+import AlertCustom from "../Components/AlertCustom";
 
 function ProductosAlta() {
   const {
@@ -10,19 +13,31 @@ function ProductosAlta() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
+  const [alert, setAlert] = useState({ variant: "", text: "" });
 
   const onSubmit = async (data) => {
     try {
       const document = await create(data);
       console.log(
-        "🚀 ~ file: ProductosAlta.jsx:18 ~ onSubmit ~ document:",
+        "Producto creado:",
         document
       );
-      alert("Creado con éxito")
+      setAlert({
+        variant: "success",
+        text: "Creado con éxito",
+        duration: 3000,
+        link: "/",
+      });
+      //setAlert();
     } catch (e) {
       console.log(e);
-      alert("No se pudo crear!!!")
+      setAlert({
+        variant: "danger",
+        text: registroMessage[e.code] || "No se pudo crear el producto",
+      });
+      //setAlert();
     }
+    
   };
 
   return (
@@ -33,21 +48,28 @@ function ProductosAlta() {
         <div className="col-md-4">
         </div>
         <div className="col-md-4">
+          <h1>Nuevo perris</h1>
+        <AlertCustom
+          //variant={alert.variant} text={alert.text}
+          {...alert}
+        />
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicNombre">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ingrese su nombre"
+                placeholder="Ingrese el nombre"
                 {...register("title")}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicNombre">
               <Form.Label>Precio</Form.Label>
               <Form.Control
                 type="number"
-                placeholder="Ingrese su precio"
+                placeholder="Ingrese el precio"
                 {...register("price")}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicNombre">
@@ -56,6 +78,7 @@ function ProductosAlta() {
                 type="text"
                 placeholder="Ingrese su imagen"
                 {...register("thumbnail")}
+                required
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicNombre">
@@ -64,6 +87,7 @@ function ProductosAlta() {
                 as="textarea" rows={3}
                 placeholder="Describa al perri"
                 {...register("categoria")}
+                required
               />
             </Form.Group>
 
@@ -74,6 +98,7 @@ function ProductosAlta() {
         </div>
       </div>
     </div>
+    
   );
 }
 
