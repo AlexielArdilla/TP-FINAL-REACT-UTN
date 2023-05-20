@@ -109,7 +109,7 @@ function Login() {
                 )}
               </Form.Text>
             </Input>
-            <ButtonWithLoading loading={loading}>Registrarse</ButtonWithLoading>
+            <ButtonWithLoading loading={loading}>Ingresar</ButtonWithLoading>
 
           </Form>
           <br />
