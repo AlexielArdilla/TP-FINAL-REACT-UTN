@@ -6,6 +6,9 @@ import { Button, Card, Form } from "react-bootstrap";
 import './detalle.css';
 import { Link } from "react-router-dom";
 import AlertCustom from "../Components/AlertCustom";
+import ButtonWithLoading from "../Components/ButtonWithLoading";
+import Input from "../Components/Input";
+import Loading from "../Components/Loading/Loading"
 
 const styles = {
 
@@ -24,7 +27,8 @@ function Pagar() {
 
   const {
     register,
-    handleSubmit
+    handleSubmit,
+    formState: { errors }
   } = useForm({ mode: "onChange" });
 
   const { id } = useParams();
@@ -43,10 +47,10 @@ function Pagar() {
           response,
           response.data()
         );
-        
+
         setProducto(response.data());
         setLoading(false);
-      
+
       } catch (e) {
         console.log(e);
       }
@@ -57,88 +61,85 @@ function Pagar() {
 
 
   const onSubmit = async (data) => {
-    
+
     const pagado = await pay(data);
     console.log("Pagó?", pagado)
 
-     setAlert({
-        variant: "success",
+    setAlert({
+      variant: "success",
       text: "¡Pago exitoso!",
       duration: 3000,
       link: "/"
     })
-    
+
 
 
   }
 
-      if (loading) {
-    return <div>Cargando ...</div>;
+  if (loading) {
+    return <Loading/>;
   }
-      return (
-      <div className="container-fluid">
+  return (
+    <div className="container-fluid">
 
-        <div className="row">
-          <div className="col-md-4">
-            <h1 style={{ textAlign: 'center', margin: "25px 25px" }}>Tu perris</h1>
-            <Card style={styles.card}>
-              <Card.Img variant="top" src={producto.thumbnail} />
-              <Card.Body>
-                <Card.Title>{producto.title}</Card.Title>
-                <Card.Text>Precio: ${producto.price}</Card.Text>
-                <Button variant="danger" as={Link} to={'/'}>
-                  Volver
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-8">
-            <h1>Pagar</h1>
-            <AlertCustom
-              //variant={alert.variant} text={alert.text}
-              {...alert}
-            />
-            <Form onSubmit={handleSubmit(onSubmit)}>
-              <Form.Group className="mb-3" controlId="formBasicNombre">
-                <Form.Label>Nombre y apellido</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Ingrese su nombre y apellido"
-                  {...register("nombre", { required: true })}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicNombre">
-                <Form.Label>Número de tarjeta de cred/débito</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="Núm de tarjeta de crédito"
-                  {...register("cardNumber", { required: true })}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicNombre">
-                <Form.Label>Vencimiento:</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="MMAA"
-                  req {...register("vencimiento", { required: true })}uired
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicNombre">
-                <Form.Label>Código de seguridad:</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="Ejemplo 111"
-                  {...register("codigoSEguridad", { required: true })}
-                />
-              </Form.Group>
-              <Button variant="success" type="submit">
-                Pagar
+      <div className="row">
+        <div className="col-md-4">
+          <h1 style={{ textAlign: 'center', margin: "25px 25px" }}>Tu perris</h1>
+          <Card style={styles.card}>
+            <Card.Img variant="top" src={producto.thumbnail} />
+            <Card.Body>
+              <Card.Title>{producto.title}</Card.Title>
+              <Card.Text>Precio: ${producto.price}</Card.Text>
+              <Button variant="danger" as={Link} to={'/'}>
+                Volver
               </Button>
-            </Form>
-          </div>
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="col-md-8">
+          <h1>Pagar</h1>
+          <AlertCustom
+            //variant={alert.variant} text={alert.text}
+            {...alert}
+          />
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Input
+              label="Nombre y apellido"
+              name="formBasicNombre"
+              placeholder="Ingrese su nombre y apellido"
+              register={{ ...register("title", { required: true }) }}
+              errors={errors}
+            />
+            <Input
+              label="Número de tarjeta de crédito"
+              name="formBasicNombre"
+              type="number"
+              placeholder="Ingrese su número"
+              register={{ ...register("cardNumber", { required: true }) }}
+              errors={errors}
+            />
+            <Input
+              label="Vencimiento"
+              name="formBasicNombre"
+              type="number"
+              placeholder="MMAA"
+              register={{ ...register("vencimiento", { required: true }) }}
+              errors={errors}
+            />
+            <Input
+              label="Código de seguridad"
+              name="formBasicNombre"
+              type="number"
+              placeholder="Ejemplo 111"
+              register={{ ...register("codigoSeguridad", { required: true }) }}
+              errors={errors}
+            />
+            <ButtonWithLoading loading={loading}>Pagar</ButtonWithLoading>
+          </Form>
         </div>
       </div>
-      )
+    </div>
+  )
 }
 
-      export default Pagar
+export default Pagar

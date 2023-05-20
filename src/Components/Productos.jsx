@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Producto from "./Producto";
 import { getAllProductos } from "../Services/productosService";
 import Row from "react-bootstrap/Row";
+import Loading from "../Components/Loading/Loading"
 
 function Productos() {
   const [loading, setLoading] = useState(true);
@@ -29,7 +30,7 @@ function Productos() {
 
 
   if (loading) {
-    return <div style={{textAlign: "center"}}><h1>Cargando...</h1></div>
+    return <Loading/>;
   } else {
     return (
       <div>
