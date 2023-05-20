@@ -100,7 +100,7 @@ function Registro() {
                 ...register("password", {
                   required: true,
                   minLength: 4,
-                  maxLength: 12,
+                  maxLength: 12
                 }),
               }}
             >

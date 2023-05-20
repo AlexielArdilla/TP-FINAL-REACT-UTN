@@ -63,7 +63,7 @@ function ProductosAlta() {
             <Input
               label="Nombre"
               name="formBasicNombre"
-              placeholder="Ingrese el nombredel perri"
+              placeholder="Ingrese el nombre del perri"
               register={{ ...register("title", { required: true }) }}
               errors={errors}
             />

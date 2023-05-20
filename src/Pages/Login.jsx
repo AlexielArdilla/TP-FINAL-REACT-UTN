@@ -32,7 +32,7 @@ function Login() {
       setLoading(false);
       setAlert({
         variant: "success",
-        text: "Gracias por registrarte",
+        text: "Ingreso exitoso",
         duration: 3000,
         link: "/",
       });

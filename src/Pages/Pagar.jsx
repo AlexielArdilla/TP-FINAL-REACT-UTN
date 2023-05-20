@@ -114,8 +114,12 @@ function Pagar() {
               label="Número de tarjeta de crédito"
               name="formBasicNombre"
               type="number"
-              placeholder="Ingrese su número"
-              register={{ ...register("cardNumber", { required: true }) }}
+              placeholder="Ingrese su número (16 dígitos)"
+              register={{ ...register("cardNumber", { 
+                required: true,
+                minLength: 16,
+                maxLength: 16
+              }) }}
               errors={errors}
             />
             <Input
@@ -123,7 +127,11 @@ function Pagar() {
               name="formBasicNombre"
               type="number"
               placeholder="MMAA"
-              register={{ ...register("vencimiento", { required: true }) }}
+              register={{ ...register("vencimiento", { 
+              required: true,
+              minLength: 4,
+              maxLength: 4
+            }) }}
               errors={errors}
             />
             <Input
@@ -131,7 +139,11 @@ function Pagar() {
               name="formBasicNombre"
               type="number"
               placeholder="Ejemplo 111"
-              register={{ ...register("codigoSeguridad", { required: true }) }}
+              register={{ ...register("codigoSeguridad", { 
+              required: true,
+              minLength: 3,
+              maxLength: 3
+            }) }}
               errors={errors}
             />
             <ButtonWithLoading loading={loading}>Pagar</ButtonWithLoading>
