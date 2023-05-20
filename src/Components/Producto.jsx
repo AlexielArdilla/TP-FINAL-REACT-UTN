@@ -8,7 +8,7 @@ import EcommerceContext from "../Context/EcommerceContext";
 const styles = {
   card: {
     marginBottom: "10px",
-    width: "18rem",
+    width: "18rem"
   },
   button: {
     margin: "15px"

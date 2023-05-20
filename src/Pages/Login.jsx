@@ -1,12 +1,14 @@
 import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
+import ButtonWithLoading from "../Components/ButtonWithLoading";
 import Form from "react-bootstrap/Form";
 import { login } from "../Services/usuariosService";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import "./Registro.css";
 import EcommerceContext from "../Context/EcommerceContext";
 import { registroMessage } from "../Utils/errorMessage";
 import AlertCustom from "../Components/AlertCustom";
+import Input from "../Components/Input";
 import { useContext, useState } from "react";
 
 function Login() {
@@ -17,16 +19,24 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [alert, setAlert] = useState({ variant: "", text: "" });
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
+    setLoading(true);
     try {
       const user = await login(data.email, data.password);
       console.log("Se logueó el user: ", user);
       context.loginUser();
-      navigate("/");
-      //alert(`Se logueó con éxito ${user.email}`);
+      setLoading(false);
+      setAlert({
+        variant: "success",
+        text: "Gracias por registrarte",
+        duration: 3000,
+        link: "/",
+      });
+      //navigate("/");
 
     } catch (e) {
       console.log(e.code);
@@ -34,6 +44,7 @@ function Login() {
         variant: "danger",
         text: registroMessage[e.code] || "Ha ocurrido un error",
       });
+      setLoading(false);
     }
   };
 
@@ -47,64 +58,59 @@ function Login() {
         <div className="col-md-4">
           <h1>Ingrese</h1>
           <AlertCustom
-          //variant={alert.variant} text={alert.text}
-          {...alert}
-        />
+            //variant={alert.variant} text={alert.text}
+            {...alert}
+          />
           <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Ingrese su email"
-                {...register("email", {
+            <Input
+              label="Email"
+              name="formBasicApellido"
+              type="email"
+              placeholder="Ingrese su email"
+              register={{
+                ...register("email", {
                   required: true,
                   pattern:
                     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/i,
-                })}
-              />
-              {errors.email && (
-                <div>
-                  <Form.Text className="text-muted">
-                    {errors.email?.type === "required" && (
-                      <span>El campo es obligatorio</span>
-                    )}
-                    {errors.email?.type === "pattern" && (
-                      <span>Formato email no valido</span>
-                    )}
-                  </Form.Text>
-                </div>
-              )}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Ingrese su contraseña"
-                {...register("password", {
+                }),
+              }}
+            >
+              <Form.Text className="text-muted">
+                {errors.email?.type === "required" && (
+                  <span>El campo es obligatorio</span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span>Formato email no valido</span>
+                )}
+              </Form.Text>
+            </Input>
+            <Input
+              label="Contraseña"
+              name="formBasicPassword"
+              type="password"
+              placeholder="Ingrese su contraseña"
+              register={{
+                ...register("password", {
                   required: true,
-                  minLength: 6,
+                  minLength: 4,
                   maxLength: 12,
-                })}
-              />
-              {errors.password && (
-                <div>
-                  <Form.Text className="text-muted">
-                    {errors.password?.type === "required" && (
-                      <span>El campo es obligatorio</span>
-                    )}
-                    {errors.password?.type === "minLength" && (
-                      <span>Debe completar al menos 6 caracteres</span>
-                    )}
-                    {errors.password?.type === "maxLength" && (
-                      <span>Debe completar menos de 12 caracteres</span>
-                    )}
-                  </Form.Text>
-                </div>
-              )}
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Ingresar
-            </Button>
+                }),
+              }}
+            >
+              <Form.Text className="text-muted">
+                {errors.password?.type === "required" && (
+                  <span>El campo es obligatorio</span>
+                )}
+                {errors.password?.type === "minLength" && (
+                  <span>Debe completar al menos 6 caracteres</span>
+                )}
+                {errors.password?.type === "maxLength" && (
+                  <span>Debe completar menos de 12 caracteres</span>
+                )}
+              </Form.Text>
+            </Input>
+            <ButtonWithLoading loading={loading}>Registrarse</ButtonWithLoading>
+
           </Form>
           <br />
           <br />
