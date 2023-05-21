@@ -42,8 +42,8 @@ function TablaPerros() {
                 </thead>
                 <tbody>
                     {productos.map((producto) => (
-                        <tr>
-                            <td>key={producto.id}</td>
+                        <tr key={producto.id}>
+                            <td>{producto.id}</td>
                             <td>{producto.data().title}</td>
                             <td>AR${producto.data().price}</td>
                             <td>{producto.data().adoptado}</td>

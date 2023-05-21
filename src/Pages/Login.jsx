@@ -22,10 +22,13 @@ function Login() {
 
   const onSubmit = async (data) => {
     setLoading(true);
+    
     try {
       const user = await login(data.email, data.password);
       console.log("Se logueó el user: ", user);
+      
       context.loginUser();
+      
       setLoading(false);
       setAlert({
         variant: "success",

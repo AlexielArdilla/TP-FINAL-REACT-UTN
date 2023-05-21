@@ -9,7 +9,7 @@ import AlertCustom from "../Components/AlertCustom";
 import ButtonWithLoading from "../Components/ButtonWithLoading";
 import Input from "../Components/Input";
 import Loading from "../Components/Loading/Loading";
-//import { registroMessage } from "../Utils/errorMessage";
+
 
 const styles = {
 
