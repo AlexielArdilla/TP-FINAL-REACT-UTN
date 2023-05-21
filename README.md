@@ -1,9 +1,54 @@
-#How to  use this project
+# Cómo usar este proyecto llamado: AdoptaUnPerri (Licensia del MIT)
 
-Test
+## Proyecto Final UTN React
+
+### Primera página home: Aquí muestra los perros que están a la venta. Sólo permite comprar, no modificar. Tambiénpermite registrarse y loguearse.
+
+![imagen de proyecto Github](pictures_github/foto1.JPG)
+
+### Este es el carousel de la página, muestra 3 perros
+
+![imagen de proyecto Github](pictures_github/foto2.JPG)
+
+### Así se ve el listado de perros
+
+![imagen de proyecto Github](pictures_github/foto3.JPG)
+
+### Este es un testimonials de la página
+
+![imagen de proyecto Github](pictures_github/foto4.JPG)
+
+### Página de regsitro
+
+![imagen de proyecto Github](pictures_github/foto5.JPG)
+
+### Página de Login
+
+![imagen de proyecto Github](pictures_github/foto6.JPG)
+
+### Una vez logueado, Notese como cambia la navbar ahora muestra las pestañas: salir y perris (donde se agrega un perro)
+
+![imagen de proyecto Github](pictures_github/foto7.JPG)
+
+### Así se ve el listado una vez logueado. Nótese el botón modificar, para modificar toda la info del perro incluyendo la foto.
+
+![imagen de proyecto Github](pictures_github/foto8.JPG)
+
+### Al presionar detalle:
+
+![imagen de proyecto Github](pictures_github/foto9detalle.JPG)
+
+### Al presionar pagar:
+
+![imagen de proyecto Github](pictures_github/foto10pagarJPG.JPG)
+
+### Subiendo la foto e info de un nuevo perro.
+
+![imagen de proyecto Github](pictures_github/foto11nuevo.JPG)
+
+## Cómo crwear la base de datos en Firebase
 
 
-![imagen de portada Github](pictures_github/foto1.JPG)
 
 
 # Getting Started with Create React App
