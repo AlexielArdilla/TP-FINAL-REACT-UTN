@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-//import Button from "react-bootstrap/Button";
 import ButtonWithLoading from "../Components/ButtonWithLoading";
 import Form from "react-bootstrap/Form";
 import { login } from "../Services/usuariosService";
-//import { useNavigate } from "react-router-dom";
 import "./Registro.css";
 import EcommerceContext from "../Context/EcommerceContext";
 import { registroMessage } from "../Utils/errorMessage";
@@ -19,7 +17,6 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
-  //const navigate = useNavigate();
   const [alert, setAlert] = useState({ variant: "", text: "" });
   const [loading, setLoading] = useState(false);
 
@@ -36,8 +33,6 @@ function Login() {
         duration: 3000,
         link: "/",
       });
-      //navigate("/");
-
     } catch (e) {
       console.log(e.code);
       setAlert({
@@ -58,7 +53,6 @@ function Login() {
         <div className="col-md-4">
           <h1>Ingrese</h1>
           <AlertCustom
-            //variant={alert.variant} text={alert.text}
             {...alert}
           />
           <Form onSubmit={handleSubmit(onSubmit)}>

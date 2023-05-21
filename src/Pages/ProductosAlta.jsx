@@ -56,7 +56,6 @@ function ProductosAlta() {
         <div className="col-md-4">
           <h1>Nuevo perris</h1>
           <AlertCustom
-            //variant={alert.variant} text={alert.text}
             {...alert}
           />
           <Form onSubmit={handleSubmit(onSubmit)}>

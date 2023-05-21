@@ -17,7 +17,7 @@ function Detalle() {
         const response = await getById(id);
         // const response = await res.json()
         console.log(
-          "🚀 ~ file: Productos.jsx:25 ~ request ~ response:",
+          "Productos response:",
           response,
           response.data()
         );

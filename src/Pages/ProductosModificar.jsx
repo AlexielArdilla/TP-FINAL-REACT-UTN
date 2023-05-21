@@ -82,7 +82,7 @@ function ProductosModificar() {
     try {
       const response = await deleteProducto(id);
       console.log(
-        "🚀 ~ file: ProductosModificar.jsx:46 ~ handleClickEliminar ~ response:",
+        "ProductosModificar handleClickEliminar trae:",
         response
       );
       setLoading(false);
@@ -107,7 +107,6 @@ function ProductosModificar() {
     <div>
       <h1>Modificar producto</h1>
       <AlertCustom
-          //variant={alert.variant} text={alert.text}
           {...alert}
         />
       <Button variant="danger" onClick={handleClickEliminar}>

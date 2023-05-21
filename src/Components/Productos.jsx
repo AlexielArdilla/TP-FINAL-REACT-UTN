@@ -15,7 +15,7 @@ function Productos() {
         const querySnapshot = await getAllProductos();
 
         console.log(
-          "🚀 ~ Cuando se trae todos los productos:",
+          "Cuando se trae todos los productos:",
           querySnapshot.docs
         );
         setProductos(querySnapshot.docs);
@@ -27,8 +27,6 @@ function Productos() {
 
     request();
   }, []);
-
-
 
   return (
     <Loading loading={loading}>

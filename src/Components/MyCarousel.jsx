@@ -11,7 +11,6 @@ function MyCarousel() {
         />
         <Carousel.Caption>
           <h3 style={{color:"white"}}>Border-Collie</h3>
-          {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
@@ -21,7 +20,6 @@ function MyCarousel() {
 
         <Carousel.Caption>
           <h3 style={{color:"white"}}>Galgo</h3>
-         {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
@@ -31,7 +29,6 @@ function MyCarousel() {
 
         <Carousel.Caption>
           <h3 style={{color:"white"}}>Callejero</h3>
-          {/*<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>*/}
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

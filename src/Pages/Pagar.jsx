@@ -99,7 +99,6 @@ function Pagar() {
         <div className="col-md-8">
           <h1>Pagar</h1>
           <AlertCustom
-            //variant={alert.variant} text={alert.text}
             {...alert}
           />
           <Form onSubmit={handleSubmit(onSubmit)}>

@@ -1,4 +1,3 @@
-//Componente tipo funcion
 import Productos from "../Components/Productos";
 import Moto from "../Components/Moto";
 import MyCarousel from "../Components/MyCarousel";

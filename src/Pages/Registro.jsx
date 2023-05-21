@@ -52,7 +52,6 @@ function Registro() {
         <div className="col-md-4">
           <h1>Regístrese</h1>
           <AlertCustom
-            //variant={alert.variant} text={alert.text}
             {...alert}
           />
           <Form onSubmit={handleSubmit(onSubmit)}>
