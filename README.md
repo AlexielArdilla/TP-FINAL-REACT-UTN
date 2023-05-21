@@ -18,7 +18,7 @@
 
 ![imagen de proyecto Github](pictures_github/foto4.JPG)
 
-### Página de regsitro
+### Página de registro
 
 ![imagen de proyecto Github](pictures_github/foto5.JPG)
 
