@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import AlertCustom from "../Components/AlertCustom";
 import ButtonWithLoading from "../Components/ButtonWithLoading";
 import Input from "../Components/Input";
-import Loading from "../Components/Loading/Loading";
-import { registroMessage } from "../Utils/errorMessage";
+import Loading from "../Components/Loading/Loading"
 
 const styles = {
 
@@ -35,7 +34,7 @@ function Pagar() {
 
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const producto = {};
+  const [producto, setProducto] = useState({});
   const [alert, setAlert] = useState({ variant: "", text: "" });
   console.log("🚀 Será esta la ID???:", id);
 
@@ -43,84 +42,44 @@ function Pagar() {
     const request = async () => {
       try {
         const response = await getById(id);
-        setValue("adoptado", "sí");
+
         console.log(
-          "🚀 ~ Info del producto:",
+          "🚀 ~ Info del producto perro?:",
           response,
           response.data()
         );
 
+        setProducto(response.data());
         setLoading(false);
-        
-        setAlert({
-          variant: "success",
-          text: "Modificado con éxito",
-          duration: 3000,
-          link: "/"
-        });
+
       } catch (e) {
         console.log(e);
-        setAlert({
-          variant: "danger",
-          text: registroMessage[e.code] || "Ha ocurrido un error",
-        });
-        setLoading(false);
       }
     };
 
     request();
-  }, [id, setValue]);
+  }, [id]);
 
-  useEffect(() => {
-    const result = async () => {
-      setLoading(true);
-      try {
-        const response = await getById(id);
-        setValue("title", response.data().title);
-        setValue("price", response.data().price);
-        setValue("thumbnail", response.data().thumbnail);
-        setValue("categoria", response.data().categoria);
-        setValue("adoptado", response.data().adoptado);
 
-        setLoading(false);
+  const onSubmit = async () => {
 
-        setAlert({
-          variant: "success",
-          text: "Modificado con éxito",
-          duration: 3000,
-          link: "/"
-        });
-      } catch (e) {
-        console.log(e);
-        setAlert({
-          variant: "danger",
-          text: registroMessage[e.code] || "Ha ocurrido un error",
-        });
-        setLoading(false);
-      }
-      setAlert({});
-    };
-    result();
-  }, [id, setValue]);
+    //const pagado = await pay(id, data);
 
-  const onSubmit = async (data) => {
-
-    const pagado = await pay(data);
-    console.log("Pagó?", pagado)
-
+    //console.log("Pagó?", pagado)
+    setProducto({...producto, adoptado:"sí"});
+    const response = await getById(id);
+    setValue("adoptado", response.data().adoptado);
+   
     setAlert({
       variant: "success",
       text: "¡Pago exitoso!",
       duration: 3000,
       link: "/"
     })
-
-
-
   }
 
   if (loading) {
-    return <Loading />;
+    return <Loading/>;
   }
   return (
     <div className="container-fluid">
@@ -133,6 +92,7 @@ function Pagar() {
             <Card.Body>
               <Card.Title>{producto.title}</Card.Title>
               <Card.Text>Precio: ${producto.price}</Card.Text>
+              <Card.Text>¿Ya fue adoptado?:<b>{producto.adoptado}</b></Card.Text>
               <Button variant="danger" as={Link} to={'/'}>
                 Volver
               </Button>
@@ -157,13 +117,11 @@ function Pagar() {
               name="formBasicNombre"
               type="number"
               placeholder="Ingrese su número (16 dígitos)"
-              register={{
-                ...register("cardNumber", {
-                  required: true,
-                  minLength: 16,
-                  maxLength: 16
-                })
-              }}
+              register={{ ...register("cardNumber", { 
+                required: true,
+                minLength: 16,
+                maxLength: 16
+              }) }}
               errors={errors}
             />
             <Input
@@ -171,13 +129,11 @@ function Pagar() {
               name="formBasicNombre"
               type="number"
               placeholder="MMAA"
-              register={{
-                ...register("vencimiento", {
-                  required: true,
-                  minLength: 4,
-                  maxLength: 4
-                })
-              }}
+              register={{ ...register("vencimiento", { 
+              required: true,
+              minLength: 4,
+              maxLength: 4
+            }) }}
               errors={errors}
             />
             <Input
@@ -185,13 +141,11 @@ function Pagar() {
               name="formBasicNombre"
               type="number"
               placeholder="Ejemplo 111"
-              register={{
-                ...register("codigoSeguridad", {
-                  required: true,
-                  minLength: 3,
-                  maxLength: 3
-                })
-              }}
+              register={{ ...register("codigoSeguridad", { 
+              required: true,
+              minLength: 3,
+              maxLength: 3
+            }) }}
               errors={errors}
             />
             <ButtonWithLoading loading={loading}>Pagar</ButtonWithLoading>

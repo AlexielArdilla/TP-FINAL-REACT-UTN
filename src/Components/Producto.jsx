@@ -25,7 +25,7 @@ function Producto({ id, nombre, precio, thumbnail, categoria }) {
             <Card.Img variant="top" src={thumbnail} />
             <Card.Body>
               <Card.Title>{nombre}</Card.Title>
-              <Card.Text>${precio}</Card.Text>
+              <Card.Text>AR${precio}</Card.Text>
               <Card.Text>{categoria}</Card.Text>
               <Button style={styles.button} variant="primary" as={Link} to={`/producto/${id}`}>
                 Detalle

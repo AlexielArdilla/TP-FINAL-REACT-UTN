@@ -37,7 +37,8 @@ function Detalle() {
       <div className="producto-lista">
         <img src={producto.thumbnail} alt="imagen del  producto" />
         <h1>{producto.title}</h1>
-        <p>${producto.price}</p>
+        <p>AR${producto.price}</p>
+        <p>{producto.categoria}</p>
         <Button variant="primary" id={id} size="lg" as={Link} to={`/producto/${id}/pagar`}>Pagar</Button>
       </div>
     </Loading>
