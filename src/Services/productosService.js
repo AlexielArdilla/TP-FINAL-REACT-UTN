@@ -1,7 +1,7 @@
 //import instance from "../Config/axios"
 import firebase from "../Config/firebase";
 
-export async function getAllProductos(buscar="ipod"){
+export async function getAllProductos(){
     // return fetch("https://api.mercadolibre.com/sites/MLA/search?q=ipod").then(res=>res.json())
     // return instance.get(`/sites/MLA/search?q=${buscar}`)
     return await firebase.firestore().collection("productos")

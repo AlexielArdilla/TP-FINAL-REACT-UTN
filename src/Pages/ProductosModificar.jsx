@@ -30,6 +30,7 @@ function ProductosModificar() {
         setValue("price", response.data().price);
         setValue("thumbnail", response.data().thumbnail);
         setValue("categoria", response.data().categoria);
+        setValue("adoptado", response.data().adoptado);
 
         setLoading(false);
 
@@ -126,6 +127,14 @@ function ProductosModificar() {
           type="number"
           placeholder="Ingrese su precio"
           register={{ ...register("price", { required: true }) }}
+          errors={errors}
+        />
+        <Input
+          label="¿Adoptado?"
+          name="formBasicNombre"
+          type="text"
+          placeholder="Ingrese si fue adoptado: sí o no"
+          register={{ ...register("adoptado", { required: true }) }}
           errors={errors}
         />
          <Input

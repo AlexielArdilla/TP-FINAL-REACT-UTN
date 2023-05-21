@@ -75,6 +75,14 @@ function ProductosAlta() {
               errors={errors}
             />
             <Input
+              label="¿Adoptado?"
+              name="formBasicNombre"
+              type="text"
+              placeholder="Ingrese si fue adoptado: sí o no"
+              register={{ ...register("adoptado", { required: true }) }}
+              errors={errors}
+            />
+            <Input
               label="Imagen"
               name="formBasicNombre"
               type="text"
