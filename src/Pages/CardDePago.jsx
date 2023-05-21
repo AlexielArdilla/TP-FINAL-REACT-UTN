@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import { getById, update, pay } from "../Services/productosService";
-import { Button, Card, Form } from "react-bootstrap";
+import { getById, update } from "../Services/productosService";
+import { Button, Card } from "react-bootstrap";
 import './detalle.css';
 import { Link } from "react-router-dom";
-import AlertCustom from "../Components/AlertCustom";
 import Loading from "../Components/Loading/Loading";
 import { registroMessage } from "../Utils/errorMessage";
 
 
-function CardDePago({ producto, loading }) {
+function CardDePago({ producto }) {
 
     const styles = {
 
@@ -66,7 +65,7 @@ function CardDePago({ producto, loading }) {
         result();
     }, [id, setValue]);
 
-    const onSubmit = async (data) => {
+    const crearAdoptado = async (data) => {
         setLoading(true);
         try {
             const document = await update(id, data);
@@ -91,26 +90,30 @@ function CardDePago({ producto, loading }) {
         }
     };
 
-    return (
-        <>
-            <div className="col-md-4">
-                <h1 style={{ textAlign: 'center', margin: "25px 25px" }}>Tu perri</h1>
-                <Card style={styles.card}>
-                    <Card.Img variant="top" src={producto.thumbnail} />
-                    <Card.Body>
-                        <Card.Title>{producto.title}</Card.Title>
-                        <Card.Text>Precio: AR${producto.price}</Card.Text>
-                        <Card.Text>¿Ya fue adoptado?:{" "}<b>{producto.adoptado}</b></Card.Text>
-                        register={{ ...register("adoptado", { required: true }) }}
-                        <Button variant="danger" as={Link} to={'/'}>
-                            Volver
-                        </Button>
-                    </Card.Body>
-                </Card>
-            </div>
-        </>
-    )
-
+    if (loading) {
+        <Loading />
+    } else {
+        return (
+            <>
+                <div className="col-md-4">
+                    <h1 style={{ textAlign: 'center', margin: "25px 25px" }}>Tu perri</h1>
+                    {alert}
+                    <Card style={styles.card}>
+                        <Card.Img variant="top" src={producto.thumbnail} />
+                        <Card.Body>
+                            <Card.Title>{producto.title}</Card.Title>
+                            <Card.Text>Precio: AR${producto.price}</Card.Text>
+                            <Card.Text>¿Ya fue adoptado?:{" "}<b>{producto.adoptado}</b></Card.Text>
+                            register={{ ...register("adoptado", { required: true }) }}
+                            <Button variant="danger" as={Link} to={'/'}>
+                                Volver
+                            </Button>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </>
+        )
+    }
 }
 
 export default CardDePago
