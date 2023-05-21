@@ -46,7 +46,7 @@
 
 ![imagen de proyecto Github](pictures_github/foto11nuevo.JPG)
 
-## Cómo crwear la base de datos en Firebase
+## Cómo crear la base de datos en Firebase
 
 
 
