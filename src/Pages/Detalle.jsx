@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { getById } from "../Services/productosService";
+import Loading from "../Components/Loading/Loading";
 import './detalle.css';
 
 function Detalle() {
@@ -30,17 +31,16 @@ function Detalle() {
     request();
   }, [id]);
 
-  //const handleClick = () => {};
-  if (loading) {
-    return <div>Cargando ...</div>;
-  }
+
   return (
-    <div className="producto-lista">
-      <img src={producto.thumbnail} alt="imagen del  producto" />
-      <h1>{producto.title}</h1>
-      <p>${producto.price}</p>
-      <Button variant="primary" id={id} size="lg" as={Link} to={`/producto/${id}/pagar`}>Pagar</Button>
-    </div>
+    <Loading loading={loading}>
+      <div className="producto-lista">
+        <img src={producto.thumbnail} alt="imagen del  producto" />
+        <h1>{producto.title}</h1>
+        <p>${producto.price}</p>
+        <Button variant="primary" id={id} size="lg" as={Link} to={`/producto/${id}/pagar`}>Pagar</Button>
+      </div>
+    </Loading>
   );
 }
 

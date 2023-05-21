@@ -1,5 +1,16 @@
-.spinner{
+/*.spinner{
     position: fixed;
     top: 50%;
     left: 50%;
-}
+    margin: 0 auto;
+}*/
+
+.spinner{
+    background-position: center center;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   
+} 

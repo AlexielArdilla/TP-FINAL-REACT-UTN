@@ -29,28 +29,26 @@ function Productos() {
   }, []);
 
 
-  if (loading) {
-    return <Loading/>;
-  } else {
-    return (
-      <div>
-        <h1 style={{ textAlign: 'center', padding: '25px' }}>{titulo}</h1>
-        <div className="d-flex justify-content-center"></div>
-        <Row xs={1} md={2} className="g-4">
-          {productos.map((producto) => (
-            <Producto
-              key={producto.id}
-              id={producto.id}
-              nombre={producto.data().title}
-              precio={producto.data().price}
-              thumbnail={producto.data().thumbnail}
-              categoria={producto.data().categoria}
-            />
-          ))}
-        </Row>
-      </div >
-    );
-  }
+
+  return (
+    <Loading loading={loading}>
+      <h1 style={{ textAlign: 'center', padding: '25px' }}>{titulo}</h1>
+      <div className="d-flex justify-content-center"></div>
+      <Row xs={1} md={2} className="g-4">
+        {productos.map((producto) => (
+          <Producto
+            key={producto.id}
+            id={producto.id}
+            nombre={producto.data().title}
+            precio={producto.data().price}
+            thumbnail={producto.data().thumbnail}
+            categoria={producto.data().categoria}
+          />
+        ))}
+      </Row>
+    </Loading >
+  );
 }
+
 
 export default Productos;

@@ -5,7 +5,7 @@ import "./Loading.css";
 function Loading({ loading, children }) {
   if (loading) {
     return (
-      <Spinner animation="border" variant="info" role="status">
+      <Spinner className="spinner" animation="border" variant="info" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
