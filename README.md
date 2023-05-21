@@ -65,7 +65,6 @@
 
 ## Video del proyecto: [Ver el video en youtube](https://youtu.be/eI4NZSjwITg)
 
-https://youtu.be/eI4NZSjwITg
 
 # Getting Started with Create React App
 
