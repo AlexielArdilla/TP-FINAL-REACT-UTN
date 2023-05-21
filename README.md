@@ -54,6 +54,18 @@
 
 ![imagen de proyecto Github](pictures_github/firebase2.JPG)
 
+## Para arrancar el proyecto: 
+### `npm install`
+
+## Luego:
+### `npm start`
+
+### ¡Eso es todo, ya pueden ver el proyecto funcionando!
+
+## Video del proyecto:
+
+https://youtu.be/eI4NZSjwITg
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
