@@ -1,21 +1,13 @@
 import { Link } from "react-router-dom";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import EcommerceContext from "../Context/EcommerceContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 function NavBarMenu() {
   const context = useContext(EcommerceContext);
 
-  const [alert, setAlert] = useState({ variant: "", text: "" });
-
-  const handleLougout = () => {
-    context.logoutUser();
-    setAlert({
-      variant: "success",
-      text: "Adiós",
-      duration: 3000,
-      link: "/"
-    });
+  const handleLougout = () =>{
+  context.logoutUser();
   }
 
   return (
@@ -45,7 +37,6 @@ function NavBarMenu() {
               {
                 context.userLogin &&
                 <>
-                  {alert}
                   <Nav.Link onClick={handleLougout}>
                     Salir
                   </Nav.Link>

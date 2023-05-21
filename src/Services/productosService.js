@@ -30,7 +30,7 @@ export async function deleteProducto(id) {
 }
 
 export async function pay(id, payload) {
-    return await firebase.firestore().doc(`pagos/${id}`)
+    return await firebase.firestore().doc(`productos/${id}`)
         .set(payload)
 
 }

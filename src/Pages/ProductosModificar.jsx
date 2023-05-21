@@ -11,7 +11,7 @@ import ButtonWithLoading from "../Components/ButtonWithLoading";
 import Input from "../Components/Input";
 
 function ProductosModificar() {
-
+  
   const { id } = useParams();
 
   const {
@@ -110,20 +110,20 @@ function ProductosModificar() {
     <div>
       <h1>Modificar producto</h1>
       <AlertCustom
-        {...alert}
-      />
+          {...alert}
+        />
       <Button variant="danger" onClick={handleClickEliminar}>
         Eliminar
       </Button>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
+         <Input
           label="Nombre"
           name="formBasicNombre"
           placeholder="Ingrese su nombre"
           register={{ ...register("title", { required: true }) }}
           errors={errors}
         />
-        <Input
+         <Input
           label="Precio"
           name="formBasicNombre"
           type="number"
@@ -139,7 +139,7 @@ function ProductosModificar() {
           register={{ ...register("adoptado", { required: true }) }}
           errors={errors}
         />
-        <Input
+         <Input
           label="Imagen"
           name="formBasicNombre"
           type="text"
@@ -149,13 +149,13 @@ function ProductosModificar() {
         />
 
         <Form.Group className="mb-3" controlId="formBasicNombre">
-          <Form.Label>Descripción</Form.Label>
-          <Form.Control
-            as="textarea" rows={3}
-            placeholder="Describa al perri"
-            {...register("categoria")}
-          />
-        </Form.Group>
+              <Form.Label>Descripción</Form.Label>
+              <Form.Control
+                as="textarea" rows={3}
+                placeholder="Describa al perri"
+                {...register("categoria")}
+              />
+            </Form.Group>
 
         <ButtonWithLoading loading={loading}>Guardar</ButtonWithLoading>
       </Form>
