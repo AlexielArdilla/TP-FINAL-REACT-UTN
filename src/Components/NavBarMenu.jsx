@@ -44,6 +44,9 @@ function NavBarMenu() {
                     <NavDropdown.Item as={Link} to="/producto/alta">
                       Nuevo
                     </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/producto/tabla">
+                      Tabla de perris
+                    </NavDropdown.Item>
                   </NavDropdown>
                 </>
               }

@@ -12,6 +12,7 @@ import ProductosModificar from "./Pages/ProductosModificar";
 import Footer from "./Components/Footer";
 import Pagar from "./Pages/Pagar";
 import GlobalState from "./Context/GlobalState";
+import TablaPerros from "./Pages/TablaPerros";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/alta" element={<Registro />} />
             <Route path="/ingresar" element={<Login />} />
             <Route path="/producto/alta" element={<ProductosAlta />} />
+            <Route path="/producto/tabla" element={<TablaPerros />} />
             <Route
               path="/producto/modificar/:id"
               element={<ProductosModificar />}
