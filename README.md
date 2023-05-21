@@ -1,3 +1,11 @@
+#How to  use this project
+
+Test
+
+
+![imagen de portada Github](pictures_github/foto1.JPG)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
