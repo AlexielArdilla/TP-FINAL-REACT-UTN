@@ -54,7 +54,8 @@
 
 ![imagen de proyecto Github](pictures_github/firebase2.JPG)
 
-## Para arrancar el proyecto: (TIP Crear carpeta src/Config/ y agregar su configuración de Firebase)
+## Para arrancar el proyecto: (TIP Crear carpeta src/Config/ y agregar su configuración de Firebase) (Tip 2 tienen que tener Node.js instalado).
+
 ### `npm install`
 
 ## Luego:
