@@ -63,7 +63,7 @@
 
 ### ¡Eso es todo, ya pueden ver el proyecto funcionando!
 
-## Video del proyecto:
+## Video del proyecto: [Ver el video en youtube](https://youtu.be/eI4NZSjwITg)
 
 https://youtu.be/eI4NZSjwITg
 
