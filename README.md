@@ -54,6 +54,10 @@
 
 ![imagen de proyecto Github](pictures_github/firebase2.JPG)
 
+## Esto lo tienen que tener si o si en el proyecto. Lo consiguen en la pág de firebase.
+
+![imagen de proyecto Github](pictures_github/config_firebase.JPG)
+
 ## Para arrancar el proyecto: (TIP Crear carpeta src/Config/ y agregar su configuración de Firebase) (Tip 2 tienen que tener Node.js instalado).
 
 ### `npm install`
