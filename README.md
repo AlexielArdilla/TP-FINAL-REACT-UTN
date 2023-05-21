@@ -46,10 +46,13 @@
 
 ![imagen de proyecto Github](pictures_github/foto11nuevo.JPG)
 
-## Cómo crear la base de datos en Firebase
+## Cómo crear la base de datos en Firebase (Productos):
 
+![imagen de proyecto Github](pictures_github/firebase1.JPG)
 
+## Cómo crear la base de datos en Firebase (Usuarios)
 
+![imagen de proyecto Github](pictures_github/firebase1.JPG)
 
 # Getting Started with Create React App
 
