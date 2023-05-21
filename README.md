@@ -2,7 +2,7 @@
 
 ## Proyecto Final UTN React
 
-### Primera página home: Aquí muestra los perros que están a la venta. Sólo permite comprar, no modificar. Tambiénpermite registrarse y loguearse.
+### Primera página home: Aquí muestra los perros que están a la venta. Sólo permite comprar, no modificar. También permite registrarse y loguearse.
 
 ![imagen de proyecto Github](pictures_github/foto1.JPG)
 
@@ -26,7 +26,7 @@
 
 ![imagen de proyecto Github](pictures_github/foto6.JPG)
 
-### Una vez logueado, Notese como cambia la navbar ahora muestra las pestañas: salir y perris (donde se agrega un perro)
+### Una vez logueado, Nótese como cambia la navbar ahora muestra las pestañas: salir y perris (donde se agrega un perro)
 
 ![imagen de proyecto Github](pictures_github/foto7.JPG)
 
