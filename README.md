@@ -1,4 +1,4 @@
-# Cómo usar este proyecto llamado: AdoptaUnPerri (Licensia del MIT)
+# Cómo usar este proyecto llamado: AdoptaUnPerri (Licencia del MIT)
 
 ## Proyecto Final UTN React
 
