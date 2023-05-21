@@ -28,18 +28,15 @@ function CardDePago({ producto, loading }) {
 
     const {
         register,
-        handleSubmit,
         setValue
-       // formState: { errors }
     } = useForm({ mode: "onChange" });
 
-    loading(false);
-   
+    const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState({ variant: "", text: "" });
 
     useEffect(() => {
         const result = async () => {
-            loading(true);
+            setLoading(true);
             try {
                 const response = await getById(id);
                 setValue("title", response.data().title);
@@ -48,7 +45,7 @@ function CardDePago({ producto, loading }) {
                 setValue("categoria", response.data().categoria);
                 setValue("adoptado", response.data().adoptado);
 
-                loading(false);
+                setLoading(false);
 
                 setAlert({
                     variant: "success",
@@ -62,7 +59,7 @@ function CardDePago({ producto, loading }) {
                     variant: "danger",
                     text: registroMessage[e.code] || "Ha ocurrido un error",
                 });
-                loading(false);
+                setLoading(false);
             }
             setAlert({});
         };
@@ -77,7 +74,7 @@ function CardDePago({ producto, loading }) {
                 "Desde modificar:",
                 document
             );
-            loading(false);
+            setLoading(false);
             setAlert({
                 variant: "success",
                 text: "Modificado con éxito",
@@ -90,27 +87,28 @@ function CardDePago({ producto, loading }) {
                 variant: "danger",
                 text: registroMessage[e.code] || "Ha ocurrido un error",
             });
-            loading(false);
+            setLoading(false);
         }
     };
 
     return (
-        <div className="row">
+        <>
             <div className="col-md-4">
-                <h1 style={{ textAlign: 'center', margin: "25px 25px" }}>Tu perris</h1>
+                <h1 style={{ textAlign: 'center', margin: "25px 25px" }}>Tu perri</h1>
                 <Card style={styles.card}>
                     <Card.Img variant="top" src={producto.thumbnail} />
                     <Card.Body>
                         <Card.Title>{producto.title}</Card.Title>
                         <Card.Text>Precio: AR${producto.price}</Card.Text>
                         <Card.Text>¿Ya fue adoptado?:{" "}<b>{producto.adoptado}</b></Card.Text>
+                        register={{ ...register("adoptado", { required: true }) }}
                         <Button variant="danger" as={Link} to={'/'}>
                             Volver
                         </Button>
                     </Card.Body>
                 </Card>
             </div>
-        </div>
+        </>
     )
 
 }
