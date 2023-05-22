@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import { getById } from "../Services/productosService";
+import { getById, update } from "../Services/productosService";
 import { Button, Card, Form } from "react-bootstrap";
 import './detalle.css';
 import { registroMessage } from "../Utils/errorMessage";
@@ -30,7 +30,7 @@ function Pagar() {
   const {
     register,
     handleSubmit,
-   //setValue,
+    //setValue,
     formState: { errors }
   } = useForm({ mode: "onChange" });
 
@@ -70,12 +70,15 @@ function Pagar() {
     setLoading(true);
     try {
       const document = await createComprador(data);
-      //setProducto(producto.adoptado("Sí"));
+      //ACA ESTABA EL ERROR PROFE:
+      setProducto({ ...producto, adoptado: "sí" });
+      update(id,{ adoptado: "sí" })
+
       console.log(
         "Producto creado:",
         document
       );
-     
+
       setLoading(false);
 
       setAlert({

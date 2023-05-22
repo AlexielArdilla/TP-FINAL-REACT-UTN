@@ -15,8 +15,7 @@ function GlobalState({ children }) {
 
         setUserLogin(false);
         localStorage.removeItem("login");
-        //console.log("Desde dentro de logoutUser!!!")
-
+        
     }
 
     return (

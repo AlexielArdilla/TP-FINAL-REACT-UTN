@@ -42,9 +42,13 @@
 
 ![imagen de proyecto Github](pictures_github/foto10pagarJPG.JPG)
 
-### Subiendo la foto e info de un nuevo perro.
+### Subiendo la foto e info de un nuevo perro:
 
 ![imagen de proyecto Github](pictures_github/foto11nuevo.JPG)
+
+### Listado de perris y si fueron adoptados:
+
+![imagen de proyecto Github](pictures_github/foto13.JPG)
 
 ## Cómo crear la base de datos en Firebase (Productos):
 

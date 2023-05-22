@@ -20,7 +20,7 @@ export async function create(payload) {
 }
 export async function update(id, payload) {
     return await firebase.firestore().doc(`productos/${id}`)
-        .set(payload)
+        .update(payload)
 
 }
 export async function deleteProducto(id) {

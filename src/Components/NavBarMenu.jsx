@@ -52,7 +52,6 @@ function NavBarMenu() {
               }
             </Nav>
 
-
           </Navbar.Collapse>
         </Navbar>
       }
