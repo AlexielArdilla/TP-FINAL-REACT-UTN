@@ -6,8 +6,8 @@ import { useContext } from "react";
 function NavBarMenu() {
   const context = useContext(EcommerceContext);
 
-  const handleLougout = () =>{
-  context.logoutUser();
+  const handleLougout = () => {
+    context.logoutUser();
   }
 
   return (
@@ -51,6 +51,8 @@ function NavBarMenu() {
                 </>
               }
             </Nav>
+
+
           </Navbar.Collapse>
         </Navbar>
       }
