@@ -23,6 +23,7 @@ function App() {
         {/*<div className="hero"></div>*/}
         <Container>
           <Routes>
+            
             <Route path="/" element={<Home />} />
             <Route path="/alta" element={<Registro />} />
             <Route path="/ingresar" element={<Login />} />
