@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import EcommerceContext from "../Context/EcommerceContext";
 import { useContext } from "react";
 
 function NavBarMenu() {
   const context = useContext(EcommerceContext);
+  const navegar = useNavigate();
 
   const handleLougout = () => {
     context.logoutUser();
+    navegar("/");
   }
 
   return (

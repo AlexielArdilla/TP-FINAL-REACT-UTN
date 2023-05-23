@@ -26,12 +26,15 @@ function App() {
               <NavBarMenu />
               <Container>
                 <Routes>
+                <Route path="/" element={<Home />} />
                   {
                     !context.userLogin &&
                     <>
-                      <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                       <Route path="/alta" element={<Registro />} />
                       <Route path="/ingresar" element={<Login />} />
+                      <Route path="/producto/:id" element={<Detalle />} />
+                      <Route path="/producto/:id/pagar" element={<Pagar />} />
                       <Route path="*" element={<NotFound />} />
                     </>}
                   {
