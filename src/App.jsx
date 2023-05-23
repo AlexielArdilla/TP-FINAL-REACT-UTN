@@ -13,34 +13,49 @@ import Footer from "./Components/Footer";
 import Pagar from "./Pages/Pagar";
 import GlobalState from "./Context/GlobalState";
 import TablaPerros from "./Pages/TablaPerros";
+import EcommerceContext from "./Context/EcommerceContext";
 
 function App() {
 
   return (
-    <GlobalState>
-      <Router>
-        <NavBarMenu />
-        {/*<div className="hero"></div>*/}
-        <Container>
-          <Routes>
-            
-            <Route path="/" element={<Home />} />
-            <Route path="/alta" element={<Registro />} />
-            <Route path="/ingresar" element={<Login />} />
-            <Route path="/producto/alta" element={<ProductosAlta />} />
-            <Route path="/producto/tabla" element={<TablaPerros />} />
-            <Route
-              path="/producto/modificar/:id"
-              element={<ProductosModificar />}
-            />
-            <Route path="/producto/:id" element={<Detalle />} />
-            <Route path="/producto/:id/pagar" element={<Pagar />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Container>
-        <Footer id="footer" />
-      </Router>
-    </GlobalState>
+    <Router>
+      <GlobalState>
+        <EcommerceContext.Consumer>
+          {(context) => (
+            <>
+              <NavBarMenu />
+              <Container>
+                <Routes>
+                  {
+                    !context.userLogin &&
+                    <>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/alta" element={<Registro />} />
+                      <Route path="/ingresar" element={<Login />} />
+                      <Route path="*" element={<NotFound />} />
+                    </>}
+                  {
+                    context.userLogin &&
+                    <>
+                     <Route path="/" element={<Home />} />
+                      <Route path="/producto/alta" element={<ProductosAlta />} />
+                      <Route path="/ingresar" element={<Login />} />
+                      <Route path="/producto/tabla" element={<TablaPerros />} />
+                      <Route
+                        path="/producto/modificar/:id"
+                        element={<ProductosModificar />} />
+                      <Route path="/producto/:id" element={<Detalle />} />
+                      <Route path="/producto/:id/pagar" element={<Pagar />} />
+                      <Route path="*" element={<NotFound />} />
+                    </>}
+                </Routes>
+              </Container>
+              <Footer id="footer" />
+            </>
+          )}
+        </EcommerceContext.Consumer>
+      </GlobalState>
+    </Router>
   );
 }
 
