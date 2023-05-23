@@ -47,10 +47,10 @@ function NavBarMenu() {
                     Salir
                   </Nav.Link>
                   <NavDropdown title="Perris" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="/producto/alta">
+                    <NavDropdown.Item as={Link} to="/productos/alta">
                       Nuevo
                     </NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/producto/tabla">
+                    <NavDropdown.Item as={Link} to="/productos/tabla">
                       Tabla de perris
                     </NavDropdown.Item>
                   </NavDropdown>

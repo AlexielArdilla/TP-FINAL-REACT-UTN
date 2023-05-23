@@ -3,7 +3,7 @@ import firebase from "../Config/firebase";
 
 export async function create(payload){
    const responseUser = await firebase.auth().createUserWithEmailAndPassword(payload.email,payload.password)
-   console.log("🚀 ~ Create ID del usuario:", responseUser.user.uid)
+   console.log("Create ID del usuario:", responseUser.user.uid)
    //let exito = "Se ha registrado con éxito!!!";
    //let fracaso = "Su registro falló, pruebe nuevamente";
    //let mensaje = (responseUser.user.uid !== undefined)? exito: fracaso;

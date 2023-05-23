@@ -26,11 +26,10 @@ function App() {
               <NavBarMenu />
               <Container>
                 <Routes>
-                <Route path="/" element={<Home />} />
                   {
                     !context.userLogin &&
                     <>
-                    <Route path="/" element={<Home />} />
+                      <Route path="/" element={<Home />} />
                       <Route path="/alta" element={<Registro />} />
                       <Route path="/ingresar" element={<Login />} />
                       <Route path="/producto/:id" element={<Detalle />} />
@@ -41,9 +40,9 @@ function App() {
                     context.userLogin &&
                     <>
                      <Route path="/" element={<Home />} />
-                      <Route path="/producto/alta" element={<ProductosAlta />} />
+                      <Route path="/productos/alta" element={<ProductosAlta />} />
                       <Route path="/ingresar" element={<Login />} />
-                      <Route path="/producto/tabla" element={<TablaPerros />} />
+                      <Route path="/productos/tabla" element={<TablaPerros />} />
                       <Route
                         path="/producto/modificar/:id"
                         element={<ProductosModificar />} />
