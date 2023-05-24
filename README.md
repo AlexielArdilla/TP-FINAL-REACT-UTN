@@ -71,7 +71,7 @@
 
 ### ¡Eso es todo, ya pueden ver el proyecto funcionando!
 
-## Video del proyecto: [Ver el video en youtube](https://youtu.be/eI4NZSjwITg)
+## Video del proyecto: [Ver el video en youtube](https://youtu.be/kZGMsQIA8Ws)
 
 
 # Getting Started with Create React App
